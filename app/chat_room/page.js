@@ -9,7 +9,7 @@ import { io } from 'socket.io-client';
 import NavBar from "@/components/NavBar";
 import MessageBubble from "@/components/MessageBubble";
 import { UserMinusIcon, UserPlusIcon } from "lucide-react";
-// import '../globals.css';
+import '../globals.css';
 
 export default function Chat_Room() {
   const router = useRouter();
@@ -21,6 +21,8 @@ export default function Chat_Room() {
 
   // ✅ Avoid multiple socket instances
   const socketRef = useRef(null);
+
+  const SAPI=process.env.NEXT_PUBLIC_SERVER_API;
 
   const chatHistory = async (id) => {
     try {
@@ -55,8 +57,9 @@ export default function Chat_Room() {
   }, []);
 
   useEffect(() => {
+
   if (userData?.username) {
-    socketRef.current = io("http://localhost:8080", {
+    socketRef.current = io(SAPI, {
       autoConnect: true,
       transports: ['websocket']
     });
