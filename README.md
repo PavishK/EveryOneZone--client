@@ -1,8 +1,3 @@
-Absolutely! Below is the **complete, copyable `README.md` content** for your **EveryOneZone** chat app — including both frontend and backend instructions, in a single file:
-
----
-
-```
 # EveryOneZone 💬
 
 **EveryOneZone** is a real-time chat application that connects everyone in one zone — fast, secure, and fun!
